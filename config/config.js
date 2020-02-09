@@ -10,7 +10,7 @@ module.exports = {
 },
 "test": {
   "username": "root",
-  "password": "RKW@1993!",
+  "password": "*Josie1060",
   "database": "handyDB",
   "host": "127.0.0.1",
   "port": 3306,
@@ -18,7 +18,7 @@ module.exports = {
 },
 "production": {
   "username": "root",
-  "password": "RKW@1993!",
+  "password": "*Josie1026!",
   "database": "handyDB",
   "host": "127.0.0.1",
   "port": 3306,
