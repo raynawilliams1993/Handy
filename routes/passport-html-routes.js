@@ -39,40 +39,66 @@ module.exports = function(app) {
 
   app.get("/city", function (req, res) {
     res.render("cityView", { profile: [
-      {
-        bizName: "g1",
-        phoneNumber: 30324234243,
-        City: "asdf",
-        zipCode: 19807,
-        bizType: ""
-      },
-      {
-        bizName: "g4",
-        phoneNumber: 30324234243,
-        city: "asdf",
-        zipCode: 19807,
-        bizType: ""
-      },   {
-        bizName: "g3",
-        phoneNumber: 30324234243,
-        city: "asdf",
-        zipCode: 19807,
-        bizType: ""
-      },   {
-        bizName: "g6",
-        phoneNumber: 23452345,
-        city: "asdf",
-        zipCode: 19807,
-        bizType: ""
-      },   {
-        bizName: "g5",
-        phoneNumber: 234523,
-        city: "asdf",
-        zipCode: 19807,
-        bizType: ""
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
       },
     ]});
   });
+
+  // app.get("/city", function (req, res) {
+  //   res.render("cityView", { profile: [
+  //     {
+  //       bizName: "g1",
+  //       phoneNumber: 30324234243,
+  //       City: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },
+  //     {
+  //       bizName: "g4",
+  //       phoneNumber: 30324234243,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g3",
+  //       phoneNumber: 30324234243,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g6",
+  //       phoneNumber: 23452345,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g5",
+  //       phoneNumber: "this isasfd some stuff",
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },
+  //   ]});
+  // });
 
   app.get("/index", function (req, res) {
     res.render("index", { message: "hi" });
