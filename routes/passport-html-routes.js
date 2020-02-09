@@ -39,29 +39,14 @@ module.exports = function(app) {
 
   app.get("/city", function (req, res) {
     res.render("cityView", { profile: [
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
+      {
+        email: "g4@gmail.com",
+        password: "password"
       },
+
     ]});
   });
+
 
   // app.get("/city", function (req, res) {
   //   res.render("cityView", { profile: [
@@ -142,5 +127,5 @@ module.exports = function(app) {
       ]
     }
     res.render("cityView" , myObjToSendToFront);
-  });
-};
+  })
+}
