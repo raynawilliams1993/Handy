@@ -59,8 +59,8 @@ module.exports = function(app) {
           email: "tluben@gmail.com",
           password: "password"
         },
-      },
-    ]});
+      ]},
+    );
   });
 
   // app.get("/city", function (req, res) {
@@ -99,6 +99,9 @@ module.exports = function(app) {
   //     },
   //   ]});
   // });
+  app.get("/api/user_data", function (req, res) {
+    res.render("user_data", {message: "hey"})
+  });
 
   app.get("/index", function (req, res) {
     res.render("index", { message: "hi" });
