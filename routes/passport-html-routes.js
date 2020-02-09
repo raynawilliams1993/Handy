@@ -37,8 +37,8 @@ module.exports = function(app) {
     res.render("cityView", { profile: [
       {
         profileName: "g1",
-        otherProfileStuff: "this is some stuff",
-        profileNumber: false
+        Email: "this is some stuff",
+        PhoneNumber: false
       },
       {
         profileName: "g2",
