@@ -33,35 +33,72 @@ module.exports = function(app) {
     res.render("index", { message: "hi" });
   });
 
+  app.get("/signup", function (req, res) {
+    res.render("signup", { message: "hi" });
+  });
+
   app.get("/city", function (req, res) {
     res.render("cityView", { profile: [
-      {
-        profileName: "g1",
-        otherProfileStuff: "this is some stuff",
-        profileNumber: false
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
+        {
+          email: "tluben@gmail.com",
+          password: "password"
+        },
       },
-      {
-        profileName: "g2",
-        otherProfileStuff: "this is some stuff 2",
-        profileNumber: true
-      },
-      {
-        profileName: "g3",
-        otherProfileStuff: "this is some stuff 3",
-        profileNumber: false
-      },
-      {
-        profileName: "g4",
-        otherProfileStuff: "this is some stuff 4",
-        profileNumber: true
-      },
-      {
-        profileName: "g5",
-        otherProfileStuff: "this is some stuff 5",
-        profileNumber: false
-      }
     ]});
   });
+
+  // app.get("/city", function (req, res) {
+  //   res.render("cityView", { profile: [
+  //     {
+  //       bizName: "g1",
+  //       phoneNumber: 30324234243,
+  //       City: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },
+  //     {
+  //       bizName: "g4",
+  //       phoneNumber: 30324234243,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g3",
+  //       phoneNumber: 30324234243,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g6",
+  //       phoneNumber: 23452345,
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },   {
+  //       bizName: "g5",
+  //       phoneNumber: "this isasfd some stuff",
+  //       city: "asdf",
+  //       zipCode: 19807,
+  //       bizType: ""
+  //     },
+  //   ]});
+  // });
 
   app.get("/index", function (req, res) {
     res.render("index", { message: "hi" });
