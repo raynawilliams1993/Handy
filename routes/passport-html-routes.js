@@ -34,7 +34,33 @@ module.exports = function(app) {
   });
 
   app.get("/city", function (req, res) {
-    res.render("cityView", { message: "hi" });
+    res.render("cityView", { profile: [
+      {
+        profileName: "g1",
+        otherProfileStuff: "this is some stuff",
+        profileNumber: false
+      },
+      {
+        profileName: "g2",
+        otherProfileStuff: "this is some stuff 2",
+        profileNumber: true
+      },
+      {
+        profileName: "g3",
+        otherProfileStuff: "this is some stuff 3",
+        profileNumber: false
+      },
+      {
+        profileName: "g4",
+        otherProfileStuff: "this is some stuff 4",
+        profileNumber: true
+      },
+      {
+        profileName: "g5",
+        otherProfileStuff: "this is some stuff 5",
+        profileNumber: false
+      }
+    ]});
   });
 
   app.get("/index", function (req, res) {
@@ -49,7 +75,7 @@ module.exports = function(app) {
   });
   app.get("/contact", function (rea, res) {
     res.render("contact", { message: "hi" });
-  });
+  })
 
   app.get("/cms", function(req, res) {
     // res.sendFile(path.join(__dirname, "../views/layouts/cms.html"));

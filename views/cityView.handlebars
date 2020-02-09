@@ -1,10 +1,10 @@
 <nav class="nav has-shadow">
-    <div class="container">
-        <nav class="nav-right">
-            <a class="nav-item is-tab">Home</a>
-            <a class="nav-item is-tab">Home</a>
-            <a class="nav-item is-tab">Home</a>
-        </nav>
+    <div class="container"></div>
+    <nav class="nav-right">
+        <a class="nav-item is-tab">Home</a>
+        <a class="nav-item is-tab">Home</a>
+        <a class="nav-item is-tab">Home</a>
+    </nav>
     </div>
 </nav>
 <div class="container">
@@ -13,59 +13,76 @@
     <hr>
     <h2 class="text-center">Plumbers</h2>
     <hr>
+    <div class="container">
+        <div class="columns">
+            {{#profile}}
+            <div class="column">
+                <h1>{{profileName}}</h1>
+                {{otherProfileStuff}}
+                {{profileNumber}}
+            </div>
+            {{/profile}}
+        </div>
+    </div>
+</div>
+
+
+
+<div class="box">
     <div class="columns">
         <div class="column">
-            {{#each profile}}
-            <h1>{{bizName}}</h1>
-            {{Email}}
-            {{Phone_number}}
-            {{zipCode}}
-            {{city}}
-            {{/each}}
+            <img
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F25%2F3a%2Fbf%2F253abf4f1f4bc16b6dc04571f8d21624--headshot-poses-headshot-photography.jpg&f=1&nofb=1">
+        </div class>
+        <div class="column">
+            <h3>User Name:{{bizName}}</h3>
+            <hr>
+            <ul>
+                <li>City:{{city}}</li>
+                <li>Rating:</li>
+            </ul>
         </div>
-        <div class="box">
-            <div class="columns">
-                <div class="column">
-                    <img
-                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F25%2F3a%2Fbf%2F253abf4f1f4bc16b6dc04571f8d21624--headshot-poses-headshot-photography.jpg&f=1&nofb=1">
-                </div class>
-                <div class="column">
-                    <h3>User Name:{{bizName}}</h3>
-                    <hr>
-                    <ul>
-                        <li>City:{{city}}</li>
-                        <li>Rating:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <div class="table-container">
-                        <table class="table-is-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Contact Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Business Name:{{bizName}}</td>
-                                    <td>dj;ad</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone Number:</td>
-                                    <td>(302)444-4444</td>
-                                </tr>
-                                <tr>
-                                    <td>dj;ad</td>
-                                    <td>dj;ad</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-    <div class="column">
+    <div class="columns">
+        <div class="column">
+            <div class="table-container">
+                <table class="table-is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Contact Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business Name:{{bizName}}</td>
+                            <td>dj;ad</td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number:</td>
+                            <td>(302)444-4444</td>
+                        </tr>
+                        <tr>
+                            <td>dj;ad</td>
+                            <td>dj;ad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="column">
+
+    {{!-- <div class="container">
+        <div class="columns">
+            {{#profile}}
+            <div class="column">
+                <h1>{{profileName}}</h1>
+                {{otherProfileStuff}}
+                {{profileNumber}}
+            </div>
+            {{/profile}}
+        </div>
+    </div> --}}
