@@ -45,7 +45,7 @@ module.exports = function (app) {
   var db = require("../models");
   app.get("/api/posts", function (req, res) {
     var query = {};
-    if (req.query.author_id) {
+    if (req.query.user_id) {
       query.UserId = req.query.user_id;
     }
     // 1. Add a join here to include all of the Authors to these posts
@@ -129,7 +129,10 @@ app.post("/api/logout", function (req, res) {
   })
 })
 
+
+
 };
+
   
 
 
