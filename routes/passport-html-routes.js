@@ -99,7 +99,7 @@ module.exports = function(app) {
   //     },
   //   ]});
   // });
-  app.get("/api/user_data", function (req, res) {
+  app.get("/signup", function (req, res) {
     res.render("user_data", {message: "hey"})
   });
 

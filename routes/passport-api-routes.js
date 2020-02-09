@@ -109,7 +109,8 @@ module.exports = function (app) {
     db.User.create(req.body).then(function (dbPost) {
       res.json(dbPost);
     });
-  })
+  });
+  
 //login
 //in the req object express you iwll have access to the-req.user.id
 
