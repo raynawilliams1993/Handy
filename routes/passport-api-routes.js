@@ -57,12 +57,12 @@ module.exports = function (app) {
     // 1. Add a join here to include all of the Authors to these posts
     db.User.findAll({
       where: query,
-      // include: [db.User]
+      include: [db.Profession]
     }).then(function (dbPost) {
-      // res.render("cityView", {
-      //   profile: dbPost
-      // });
-     res.json(dbPost)
+      res.render("cityView", {
+        profile: dbPost
+      });
+    //  res.json(dbPost)
     });
   });
 
@@ -81,11 +81,7 @@ module.exports = function (app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function (req, res) {
-    db.Post.create(req.body).then(function (dbPost) {
-      res.json(dbPost);
-    });
-  });
+
 
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function (req, res) {
@@ -99,16 +95,11 @@ module.exports = function (app) {
   });
 
   // PUT route for updating posts
-  app.put("/api/posts", function (req, res) {
-    db.Post.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function (dbPost) {
-        res.json(dbPost);
-      });
+  app.post("/api/posts", function (req, res) {
+   req.body.UserId = req.user.id;
+    db.Profession.create(req.body).then(function (dbProfession){
+     res.json(dbProfession);
+   })
   });
 
   //test route 
