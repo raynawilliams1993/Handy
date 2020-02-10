@@ -33,7 +33,7 @@ module.exports = function(app) {
   })
 
   app.get("/test", function (req, res) {
-    res.render("index", { message: "hi" });
+    res.render("index");
   });
 
   app.get("/city", function (req, res) {
