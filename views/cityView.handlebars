@@ -23,12 +23,13 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                {{#profile}}
+                {{#each profile}}
                 <div class="box">
                     <h1>{{email}}</h1>
+                      <h1>{{id}}</h1>
                     <p>City: {{password}}</p>
                 </div>
-                {{/profile}}
+                {{/each}}
             </div>
         </div>
     </div>

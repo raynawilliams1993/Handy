@@ -49,11 +49,14 @@ module.exports = function (app) {
       query.UserId = req.query.user_id;
     }
     // 1. Add a join here to include all of the Authors to these posts
-    db.Post.findAll({
+    db.User.findAll({
       where: query,
-      include: [db.User]
+      // include: [db.User]
     }).then(function (dbPost) {
-      res.json(dbPost);
+      // res.render("cityView", {
+      //   profile: dbPost
+      // });
+     res.json(dbPost)
     });
   });
 
@@ -109,8 +112,7 @@ module.exports = function (app) {
     db.User.create(req.body).then(function (dbPost) {
       res.json(dbPost);
     });
-  });
-  
+  })
 //login
 //in the req object express you iwll have access to the-req.user.id
 
@@ -129,11 +131,13 @@ app.post("/api/logout", function (req, res) {
     res.json(dbPost);
   })
 })
-
-
+app.get("/api/members", function(req, res) {
+  db.Handy.findAll({}).then(function(dbHandy) {
+    res.json(dbHandy);
+  });
+});
 
 };
-
   
 
 
