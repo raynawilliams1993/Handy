@@ -12,133 +12,70 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.handlebars"));
+    res.sendFile(path.join(__dirname, "../views/layouts/signup.handlebars"));
   });
 
-  app.get("/public/login", function(req, res) {
+  app.get("/views/layouts/signup", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.handlebars"));
+    res.sendFile(path.join(__dirname, "../views/layouts/login.handlebars"));
   });
-
+ 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/api/members", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/layouts/login.handlebars"));
   });
+  app.get("/api/members", isAuthenticated, function(req, res) {
+    res.render("members", {message:"current members"})
+  })
 
   app.get("/test", function (req, res) {
     res.render("index", { message: "hi" });
   });
 
-  app.get("/signup", function (req, res) {
-    res.render("signup", { message: "hi" });
-  });
-
   app.get("/city", function (req, res) {
-    res.render("cityView", { profile: [
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-        {
-          email: "tluben@gmail.com",
-          password: "password"
-        },
-      ]},
-    );
-  });
-
-  // app.get("/city", function (req, res) {
-  //   res.render("cityView", { profile: [
-  //     {
-  //       bizName: "g1",
-  //       phoneNumber: 30324234243,
-  //       City: "asdf",
-  //       zipCode: 19807,
-  //       bizType: ""
-  //     },
-  //     {
-  //       bizName: "g4",
-  //       phoneNumber: 30324234243,
-  //       city: "asdf",
-  //       zipCode: 19807,
-  //       bizType: ""
-  //     },   {
-  //       bizName: "g3",
-  //       phoneNumber: 30324234243,
-  //       city: "asdf",
-  //       zipCode: 19807,
-  //       bizType: ""
-  //     },   {
-  //       bizName: "g6",
-  //       phoneNumber: 23452345,
-  //       city: "asdf",
-  //       zipCode: 19807,
-  //       bizType: ""
-  //     },   {
-  //       bizName: "g5",
-  //       phoneNumber: "this isasfd some stuff",
-  //       city: "asdf",
-  //       zipCode: 19807,
-  //       bizType: ""
-  //     },
-  //   ]});
-  // });
-  app.get("/signup", function (req, res) {
-    res.render("user_data", {message: "hey"})
+    res.render("cityView", { message: "hi" });
   });
 
   app.get("/index", function (req, res) {
     res.render("index", { message: "hi" });
   });
   // cms route loads cms.html
-  app.get("/cms", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/cms.html"));
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
   });
   app.get("/login", function (req, res) {
     res.render("login", { message: "yo" });
   });
   app.get("/contact", function (rea, res) {
     res.render("contact", { message: "hi" });
-  })
+  });
 
-  app.get("/cms", function(req, res) {
+  app.get("/main", function(req, res) {
     // res.sendFile(path.join(__dirname, "../views/layouts/cms.html"));
-    res.render("cms" , {message:"hi" });
+    res.render("main" , {message:"hi" });
   });
   app.get("/login", function(req, res) {
     res.render("login", {message: "yo"});
   })
 
-  app.get("/", function(req, res) {
+  app.get("/email", function(req, res) {
     const myObjToSendToFront = {
       profile: [
         {
           bizName: "Teddy",
-          Email: "teddy@email.com",
-          Phone_number: "303-555-1234",
+          email: "teddy@email.com",
+          phone_number: "303-555-1234",
           zipCode: "80203",
           city : "Denver"
         },
         {
           bizName: "John",
-          Email: "Smith",
-          Phone_number: "404-555-1234",
+          email: "Smith",
+          phone_number: "404-555-1234",
           zipCode: "90210",
           city : "Beverly Hills"
         }
@@ -146,4 +83,5 @@ module.exports = function(app) {
     }
     res.render("cityView" , myObjToSendToFront);
   });
+
 };
