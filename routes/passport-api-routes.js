@@ -22,6 +22,12 @@ module.exports = function (app) {
       });
   });
 
+  app.get("/api/getall", function (req, res) {
+    // users = db.findAll()
+    console.log(db.User, "logging here")
+    //res.json(users);
+  });
+
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
